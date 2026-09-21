@@ -27,3 +27,14 @@ unset rc
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Use a separate Claude account/config for the personal workspace, so it never
+# shares login or MCP connector auth with the work (workspace-paxel) session.
+claude() {
+  case "$PWD" in
+    "$HOME/Documents/workspace-personal"*)
+      CLAUDE_CONFIG_DIR="$HOME/Documents/workspace-personal/.claude-auth" command claude "$@" ;;
+    *)
+      command claude "$@" ;;
+  esac
+}
