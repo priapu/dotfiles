@@ -1,0 +1,11 @@
+# Non-"terminal-ish" setup: a humanist monospace with real kerning/spacing,
+# plus a soft, muted theme (auto-switches with system light/dark mode).
+
+font-family = IBM Plex Mono
+font-size = 14
+adjust-cell-width = 8%
+adjust-cell-height = 15%
+
+theme = light:Rose Pine Dawn,dark:Rose Pine
+
+cursor-style = bar
